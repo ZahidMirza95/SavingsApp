@@ -1,20 +1,15 @@
 import React from 'react';
 import '../App.css';
 import Transaction from '../components/Transaction';
-//List of ALL transactions goes in here
-const TransactionList = ({transactionsDict, setTransactionsDict, transactions, setTransactions, balance, setBalance}) => {
-    //let dates = Object.keys(transactionsDict);
-    //console.log("DICT TRANSACTIONS");
-    //console.log(transactionsDict);
-    //let listDates;
-    //listDates = dates.map(date => (<h1> {date} </h1>))
+
+const TransactionList = ({transactionsDict, setTransactionsDict, balance, setBalance}) => {
     let listToRender = [];
+    //The transactions are rendered as follows:
+    //Date of the transaction will be listed above ALL of the transactions of that specific date
     for(var date in transactionsDict) {
         listToRender.push(<h1 key={date}>{date}</h1>);
         for(var i = 0; i < transactionsDict[date].length; i++) {
             listToRender.push(<Transaction
-                transactions={transactions}
-                setTransactions={setTransactions}
                 transactionsDict={transactionsDict}
                 setTransactionsDict={setTransactionsDict}
                 id = {transactionsDict[date][i].id}
@@ -30,11 +25,6 @@ const TransactionList = ({transactionsDict, setTransactionsDict, transactions, s
     return(
         <div className ="transactions">
             <ul className='transactionList'>
-                {/*Map each transaction from the list to a React Component*/}
-                {/*dates.map(date => (
-                    <li>{date}</li>
-                ))*/
-                }
                 {listToRender}
             </ul>
         </div>

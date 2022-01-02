@@ -6,18 +6,10 @@ const Transaction = ({setTransactions, transactions, transactionsDict, setTransa
     const deleteHandler = () => {
         //Delete transaction only if removing that transaction will NOT leave a negative amount
         //When a transaction gets deleted, adjust the balance accordingly
-        /*if(balance - amount >= 0) {
-            setTransactions(transactions.filter(el => el.id !== id))
-            setBalance(balance-amount);
-        }
-        //Give a warning if the balance - amount reaches a negative value (i.e. invalid, can't have a negative balance)
-        else {
-
-        }*/
         if(balance - amount >= 0) {
             let tempDict = {...transactionsDict};
             tempDict[date] = tempDict[date].filter(el => el.id !== id);
-            //If it becomes empty, than remove the date so it doesn't render unneccessarily
+            //If a date doesn't contain any transactions, than remove the date so it doesn't render unneccessarily
             if(tempDict[date].length === 0) {
                 delete tempDict[date];
             }

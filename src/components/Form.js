@@ -7,37 +7,21 @@ const Form = ({setBalance, balance, setTransactions, transactions, setTransactio
         var amountInput = parseFloat(parseFloat(document.getElementById('tAmount').value).toFixed(2));
         var dateInput = document.getElementById('tDate').value
         //If amount isn't null, add it to list. Otherwise don't add it (need to add amount for transaction to be valid)
-        //Also need to make sure that the balance when added to the amount doesn't go below 0
-        //Original Implementation
-        /*if(!isNaN(amountInput) && amountInput !== null && balance + amountInput >= 0) {
-            setTransactions([
-                ...transactions, {name: document.getElementById('tName').value, amount: amountInput, comment: document.getElementById('tComment').value, date: document.getElementById('tDate').value, id: Math.random()*1000}
-            ]);
-            setBalance(balance+amountInput);
-        }*/
-        //Dictionary Implementation
+        //Additionally need to make sure the transaction doesn't cause the balance to go negative.
+        //Transactions are stored in a hash table, with the key being the date of the transaction (i.e. transactions are grouped by date)
         if(!isNaN(amountInput) && amountInput !== null && balance + amountInput >= 0) {
-            //If date already exists, just append
+            //If date already exists, just append to the existing one
             if(transactionsDict.hasOwnProperty(dateInput)) {
-                console.log("HERE");
                 let tempDict = {...transactionsDict};
                 tempDict[dateInput] = [...tempDict[dateInput], {name: document.getElementById('tName').value, amount: amountInput, comment: document.getElementById('tComment').value, id: Math.random()*1000}];
                 setTransactionsDict(tempDict);
             }
             //If it doesn't, create a new entry by adding the new date to the dictionary
             else {
-                console.log(typeof(dateInput));
                 let tempDict = {...transactionsDict};
                 tempDict[dateInput] = [{name: document.getElementById('tName').value, amount: amountInput, comment: document.getElementById('tComment').value, id: Math.random()*1000}];
                 setTransactionsDict(tempDict);
             }
-            for(var key in transactionsDict) {
-                console.log(key);
-                console.log(transactionsDict[key]);
-            }
-            setTransactions([
-                ...transactions, {name: document.getElementById('tName').value, amount: amountInput, comment: document.getElementById('tComment').value, date: dateInput, id: Math.random()*1000}
-            ]);
             setBalance(balance+amountInput);
         }
     }
