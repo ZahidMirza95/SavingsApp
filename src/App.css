@@ -3,6 +3,36 @@
   background-color: rgb(58, 102, 248);
 }
 
+.nameInput {
+  position: relative;
+  border-radius: 5px;
+  font-family: Helvetica;
+  font-size: 40px;
+}
+
+.amountInput {
+  position: relative;
+  border-radius: 5px;
+  font-family: Helvetica;
+  font-size: 40px;
+}
+
+.commentInput {
+  position: relative;
+  border-radius: 5px;
+  font-family: Helvetica;
+  font-size: 40px;
+}
+
+.dateInput {
+  background-color: red;
+}
+
+.balanceMain {
+  font-size: 100px;
+  position: relative;
+}
+
 .parallelogram {
   width: 100px;
   height: 30px;
@@ -17,4 +47,10 @@
   height: 30px;
   background: rgb(255, 255, 255);
   transform: skew(-25deg) rotate(0deg);
+}
+
+.garbage {
+  width: 50px;
+  height: 50px;
+  background: red;
 }
