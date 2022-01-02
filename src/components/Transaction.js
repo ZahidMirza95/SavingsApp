@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 //List of ALL transactions goes in here
-const Transaction = ({setTransactions, transactions, transactionsDict, setTransactionsDict, name, amount, comment, date, id, balance, setBalance}) => {
+const Transaction = ({transactionsDict, setTransactionsDict, name, amount, comment, date, id, balance, setBalance}) => {
     //Delete transaction if button is pressed
     const deleteHandler = () => {
         //Delete transaction only if removing that transaction will NOT leave a negative amount
@@ -22,8 +22,8 @@ const Transaction = ({setTransactions, transactions, transactionsDict, setTransa
         }
     }
     return(
-        <div className='transaction'>   
-            <li className='transaction-item' key={id}>
+        <div className='transaction' key = {id}>   
+            <li className='transaction-item'>
                 <h1> {name} </h1>
                 <h1> {amount} </h1>
                 <h1> {comment} </h1>

@@ -28,11 +28,22 @@ const Form = ({setBalance, balance, setTransactions, transactions, setTransactio
 
     return(
         <form>
+            <h1 className='enterTransaction'> Enter Transaction Info </h1>
+            <label htmlFor= 'tName'>Name</label>
             <input type="text" className = 'nameInput' id ='tName'></input>
+            <br/>
+            <label htmlFor="tAmount">Amount</label>
             <input type="number" className='amountInput' id='tAmount'></input>
-            <input type="text" className = 'commentInput' id='tComment'></input>
+            <br/>
+            <div className='comment'>
+            <label htmlFor="tComment">Comment</label>
+            <textarea className = 'commentInput' id='tComment' rows='5'/>
+            </div>
+            <br/>
+            <label htmlFor="tDate">Date</label>
             <input type="date" className = 'dateInput'id='tDate'></input>
-            <button type='submit' onClick={submitTransaction}>
+            <br/>
+            <button type='submit' className='transactionSubmit' onClick={submitTransaction}>
                 Add Transaction
             </button>
         </form>

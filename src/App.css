@@ -1,36 +1,106 @@
+html {
+  background-color: red;
+}
+
 .App {
   text-align: center;
-  background-color: rgb(58, 102, 248);
 }
+
+/*form {
+  background-color: rgb(0, 0, 0);
+}*/
+
+@font-face {
+  font-family: 'SanMarino';
+  src: url(fonts/san-marino-beach-font/SanMarinoBeach-2OOLW.ttf) format('truetype');
+}
+
+.balanceMain {
+  font-family: 'SanMarino';
+  font-size: 100px;
+  position: relative;
+}
+
+/* Labels for all the inputs */
+label {
+  display: inline-block;
+  text-align: right;
+  width: 250px;
+  font-size: 50px;
+  font-family: 'SanMarino';
+}
+
+.enterTransaction {
+  font-family: 'SanMarino';
+  font-size: 50px;
+}
+/************/
+/****INPUTS***/
+/**************/
 
 .nameInput {
   position: relative;
   border-radius: 5px;
-  font-family: Helvetica;
+  font-family: 'Franklin Gothic';
+  color: white;
   font-size: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background-color: black;
 }
 
 .amountInput {
   position: relative;
   border-radius: 5px;
-  font-family: Helvetica;
+  font-family: 'Franklin Gothic';
   font-size: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background-color: black;
+  color: white;
+}
+
+/*Makes sure the label is properly aligned with the text area (by default it isn't)*/
+.comment * {
+  vertical-align: top;
 }
 
 .commentInput {
   position: relative;
   border-radius: 5px;
-  font-family: Helvetica;
+  font-family: 'Franklin Gothic';
   font-size: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background-color: black;
+  color: white;
 }
 
 .dateInput {
-  background-color: red;
+  background-color: black;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  font-family: 'Franklin Gothic';
+  font-size: 40px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
-.balanceMain {
-  font-size: 100px;
+/****SUBMIT BUTTON ****/
+.transactionSubmit {
   position: relative;
+  font-family: 'Franklin Gothic';
+  color: white;
+  background-color: black;
+  font-size: 40px;
+  margin-bottom: 20px;
+  transform: skew(-25deg) rotate(0deg);
+  border-width: 5px;
+  border-color: white;
+  border-style: solid;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
 }
 
 .parallelogram {
