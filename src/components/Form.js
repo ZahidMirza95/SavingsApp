@@ -25,13 +25,14 @@ const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
             setBalance(balance+amountInput);
         }
     }
+
+    /**Logic for figuring out today's date in YYYY-mm-dd format*/
     const current = new Date();
     var month = current.getMonth()+1;
     var day = current.getDate();
     if(month < 10) month = '0' + month;
     if(day < 10) day = '0' + day;
     const today = `${current.getFullYear()}-${month}-${day}`;
-    console.log(today);
 
     return(
         <form>
