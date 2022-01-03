@@ -86,6 +86,10 @@ label {
   margin-bottom: 20px;
   margin-left: 20px;
 }
+/***Change the calendar icon***/
+[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: red;
+}
 
 /****SUBMIT BUTTON ****/
 .transactionSubmit {
@@ -117,6 +121,31 @@ label {
   height: 30px;
   background: rgb(255, 255, 255);
   transform: skew(-25deg) rotate(0deg);
+}
+
+/****************/
+/**TRANSACTIONS**/
+/****************/
+.date {
+  font-family: 'SanMarino';
+  color: black;
+  font-size: 50px;
+}
+
+.transactionList {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.transaction {
+  background-color: black;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  color: white;
+  font-family: 'Franklin Gothic';
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .garbage {

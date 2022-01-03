@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 
-const Form = ({setBalance, balance, setTransactions, transactions, setTransactionsDict, transactionsDict}) => {
+const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
     const submitTransaction = (e) => {
         e.preventDefault(); //Prevents reloading the page
         var amountInput = parseFloat(parseFloat(document.getElementById('tAmount').value).toFixed(2));
@@ -25,6 +25,13 @@ const Form = ({setBalance, balance, setTransactions, transactions, setTransactio
             setBalance(balance+amountInput);
         }
     }
+    const current = new Date();
+    var month = current.getMonth()+1;
+    var day = current.getDate();
+    if(month < 10) month = '0' + month;
+    if(day < 10) day = '0' + day;
+    const today = `${current.getFullYear()}-${month}-${day}`;
+    console.log(today);
 
     return(
         <form>
@@ -41,7 +48,7 @@ const Form = ({setBalance, balance, setTransactions, transactions, setTransactio
             </div>
             <br/>
             <label htmlFor="tDate">Date</label>
-            <input type="date" className = 'dateInput'id='tDate'></input>
+            <input defaultValue={today} type="date" className = 'dateInput'id='tDate'></input>
             <br/>
             <button type='submit' className='transactionSubmit' onClick={submitTransaction}>
                 Add Transaction
