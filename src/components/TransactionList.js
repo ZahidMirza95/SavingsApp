@@ -6,8 +6,11 @@ const TransactionList = ({transactionsDict, setTransactionsDict, balance, setBal
     let listToRender = [];
     //The transactions are rendered as follows:
     //Date of the transaction will be listed above ALL of the transactions of that specific date
-    //Right now it's sort of inefficient, as it rerenders EVERY single time. Fix this
-    for(var date in transactionsDict) {
+    let sortedDates = Object.keys(transactionsDict);
+    sortedDates.sort()
+    sortedDates = sortedDates.reverse();
+
+    for(let date of sortedDates) {
         listToRender.push(<h1 key={date} className='date'>{date}</h1>);
         for(var i = 0; i < transactionsDict[date].length; i++) {
             listToRender.push(<div key = {transactionsDict[date][i].id}>
