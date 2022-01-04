@@ -25,12 +25,10 @@ const Transaction = ({transactionsDict, setTransactionsDict, name, amount, comme
         <div className='transaction' key = {id}>   
             <li className='transaction-item'>
                 <h1> {name} </h1>
-                <h1> {amount} </h1>
+                <h1 className={amount >= 0 ? 'positive' : 'negative'}> {amount} </h1>
                 <h1> {comment} </h1>
             </li>
-            <button className='garbage' onClick = {deleteHandler}>
-                <i key={id} className='fas fa-trash'></i>
-            </button>
+            <button className='garbage' onClick = {deleteHandler}/>
         </div>
     );
 }

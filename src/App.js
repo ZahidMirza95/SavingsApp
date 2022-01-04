@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Form from './components/Form';
 import TransactionList from './components/TransactionList';
+import ErrorMessageBox from './components/ErrorMessageBox';
 
 function App() {
   //Variable declarations
@@ -42,8 +43,25 @@ function App() {
     }
   };
 
+  //Makes the navbar appear on scroll
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-50px";
+    }
+  }
+
   return (
     <div className="App">
+      <div id='navbar'>
+        <p className='balance'>{parseFloat(balance).toFixed(2)}</p>
+        <a> Achievements </a>
+        <a> Stats </a>
+        <a> Home </a>
+      </div>
       <h1 className='balanceMain'> {parseFloat(balance).toFixed(2)} </h1>
       <Form 
       transactionsDict = {transactionsDict}
@@ -57,6 +75,12 @@ function App() {
       setBalance = {setBalance}/>
       <div className='parallelogram'></div>
       <div className='parallelogram2'></div>
+      <ErrorMessageBox
+      message="TEST MESSAGE"
+      xPos={200}
+      yPos={300}
+      invisible={true}
+      />
     </div>
   );
 }

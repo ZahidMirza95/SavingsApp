@@ -24,6 +24,29 @@ const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
             }
             setBalance(balance+amountInput);
         }
+        //If the amount entered is null or invalid, show a message
+        else if(isNaN(amountInput) || amountInput === null) {
+            document.getElementById('error').style.visibility = 'visible';
+            document.getElementById('error').style.left = '100px';
+            document.getElementById('error').innerHTML = "Error: You must specify a valid amount";
+            //Error disappears in 3 seconds
+            setTimeout(function(){
+                document.getElementById('error').style.visibility = 'hidden';
+            }, 3000);
+            /*document.getElementsByClassName("errorMessage")[0].left = "500px";
+            document.getElementsByClassName("errorMessage")[0].top = "500px";
+            document.getElementsByClassName("errorMessage")[0].visibility = true;*/
+        }
+        //If amount entered will cause balance to become negative, show a message here
+        else {
+            document.getElementById('error').style.visibility = 'visible';
+            document.getElementById('error').style.left = '100px';
+            document.getElementById('error').innerHTML = "Error: Adding this transaction will cause balance to go negative";
+            //Error disappears in 3 seconds
+            setTimeout(function(){
+                document.getElementById('error').style.visibility = 'hidden';
+            }, 3000);
+        }
     }
 
     /**Logic for figuring out today's date in YYYY-mm-dd format*/
@@ -35,7 +58,7 @@ const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
     const today = `${current.getFullYear()}-${month}-${day}`;
 
     return(
-        <form>
+        <form className='transactionForm'>
             <h1 className='enterTransaction'> Enter Transaction Info </h1>
             <label htmlFor= 'tName'>Name</label>
             <input type="text" className = 'nameInput' id ='tName'></input>
@@ -45,11 +68,11 @@ const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
             <br/>
             <div className='comment'>
             <label htmlFor="tComment">Comment</label>
-            <textarea className = 'commentInput' id='tComment' rows='5'/>
+            <textarea className = 'commentInput' id='tComment' rows='5' cols='21'/>
             </div>
             <br/>
             <label htmlFor="tDate">Date</label>
-            <input defaultValue={today} type="date" className = 'dateInput'id='tDate'></input>
+            <input defaultValue={today} max={today} type="date" className = 'dateInput'id='tDate'></input>
             <br/>
             <button type='submit' className='transactionSubmit' onClick={submitTransaction}>
                 Add Transaction

@@ -6,14 +6,124 @@ html {
   text-align: center;
 }
 
-/*form {
-  background-color: rgb(0, 0, 0);
-}*/
-
 @font-face {
   font-family: 'SanMarino';
   src: url(fonts/san-marino-beach-font/SanMarinoBeach-2OOLW.ttf) format('truetype');
 }
+
+/**ERROR MESSAGE**/
+.errorMessage {
+  border-width: 5px;
+  border-color: white;
+  border-style: solid;
+  background-color: black;
+  position: absolute;
+  font-family: 'Franklin Gothic';
+  color: white;
+}
+
+.errorMessage p {
+  
+}
+
+/***************/
+/***SCROLLBAR***/
+/***************/
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(196, 196, 196);
+}
+/************/
+/***NAVBAR***/
+/************/
+
+#navbar {
+  position:fixed;
+  background-color: black;
+  width:100%;
+  display:block;
+  top:-50px;
+  transition: top 0.3s;
+  z-index: 20; /* Makes navbar appear in front of other elements*/
+}
+
+#navbar a {
+  color: white;
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'SanMarino';
+}
+
+#navbar .balance {
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: auto;
+  position: absolute;
+  margin-left: 50%;
+  font-family: 'SanMarino';
+}
+
+#navbar a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* BURGER SETTINGS */
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: transform 0.2s ease-in;
+}
+
+.exit .line1 {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transform: rotate(-45deg) translate(0px,5px);
+  transition: transform 0.2s ease-in;
+}
+
+.exit .line2 {
+  opacity: 0;
+}
+
+.exit .line3 {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transform: rotate(45deg) translate(0px,-6px);
+  transition: transform 0.2s ease-in; 
+}
+
+/***BALANCE***/
 
 .balanceMain {
   font-family: 'SanMarino';
@@ -30,23 +140,34 @@ label {
   font-family: 'SanMarino';
 }
 
+/************/
+/****INPUT FORM***/
+/**************/
+
+.transactionForm {
+  background-color: black;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white;
+  color: white;
+}
+
 .enterTransaction {
   font-family: 'SanMarino';
   font-size: 50px;
 }
-/************/
-/****INPUTS***/
-/**************/
 
 .nameInput {
   position: relative;
   border-radius: 5px;
   font-family: 'Franklin Gothic';
-  color: white;
   font-size: 40px;
   margin-bottom: 20px;
   margin-left: 20px;
-  background-color: black;
+  background-color: red;
+  color: white;
 }
 
 .amountInput {
@@ -56,7 +177,7 @@ label {
   font-size: 40px;
   margin-bottom: 20px;
   margin-left: 20px;
-  background-color: black;
+  background-color: red;
   color: white;
 }
 
@@ -72,12 +193,12 @@ label {
   font-size: 40px;
   margin-bottom: 20px;
   margin-left: 20px;
-  background-color: black;
+  background-color: red;
   color: white;
 }
 
 .dateInput {
-  background-color: black;
+  background-color: red;
   color: white;
   position: relative;
   border-radius: 5px;
@@ -103,8 +224,11 @@ label {
   border-width: 5px;
   border-color: white;
   border-style: solid;
-  transform-style: preserve-3d;
-  transition: all 0.8s ease;
+}
+
+.transactionSubmit:hover {
+  background-color: white;
+  color: black;
 }
 
 .parallelogram {
@@ -152,4 +276,12 @@ label {
   width: 50px;
   height: 50px;
   background: red;
+}
+
+.positive {
+  color: rgb(79, 224, 65);
+}
+
+.negative {
+  color: red;
 }
