@@ -27,20 +27,17 @@ const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
         //If the amount entered is null or invalid, show a message
         else if(isNaN(amountInput) || amountInput === null) {
             document.getElementById('error').style.visibility = 'visible';
-            document.getElementById('error').style.left = '100px';
+            document.getElementById('error').style.left = '50%';
             document.getElementById('error').innerHTML = "Error: You must specify a valid amount";
             //Error disappears in 3 seconds
             setTimeout(function(){
                 document.getElementById('error').style.visibility = 'hidden';
             }, 3000);
-            /*document.getElementsByClassName("errorMessage")[0].left = "500px";
-            document.getElementsByClassName("errorMessage")[0].top = "500px";
-            document.getElementsByClassName("errorMessage")[0].visibility = true;*/
         }
         //If amount entered will cause balance to become negative, show a message here
         else {
             document.getElementById('error').style.visibility = 'visible';
-            document.getElementById('error').style.left = '100px';
+            document.getElementById('error').style.left = '50%';
             document.getElementById('error').innerHTML = "Error: Adding this transaction will cause balance to go negative";
             //Error disappears in 3 seconds
             setTimeout(function(){

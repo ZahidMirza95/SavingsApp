@@ -17,7 +17,7 @@ html {
   border-color: white;
   border-style: solid;
   background-color: black;
-  position: absolute;
+  position: fixed;
   font-family: 'Franklin Gothic';
   color: white;
 }
