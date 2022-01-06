@@ -92,6 +92,10 @@ html {
   color: black;
 }
 
+.lastAmount {
+  font-family: 'SanMarino';
+}
+
 /* BURGER SETTINGS */
 .burger div {
   width: 25px;
@@ -220,7 +224,6 @@ label {
   background-color: black;
   font-size: 40px;
   margin-bottom: 20px;
-  transform: skew(-25deg) rotate(0deg);
   border-width: 5px;
   border-color: white;
   border-style: solid;

@@ -18,7 +18,13 @@ const Transaction = ({transactionsDict, setTransactionsDict, name, amount, comme
         }
         //Give warning to the user if they delete a transaction that will cause them to get a negative balance. They're not allowed to do this
         else {
-
+            document.getElementById('error').style.visibility = 'visible';
+            document.getElementById('error').style.left = '50%';
+            document.getElementById('error').innerHTML = "Error: Removing this transaction will cause balance to go negative";
+            //Error disappears in 3 seconds
+            setTimeout(function(){
+                document.getElementById('error').style.visibility = 'hidden';
+            }, 3000);
         }
     }
     return(

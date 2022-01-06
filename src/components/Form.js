@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 
-const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
+const Form = ({setBalance, balance, setTransactionsDict, transactionsDict, setLastAmount}) => {
     const submitTransaction = (e) => {
         e.preventDefault(); //Prevents reloading the page
         var amountInput = parseFloat(parseFloat(document.getElementById('tAmount').value).toFixed(2));
@@ -23,6 +23,7 @@ const Form = ({setBalance, balance, setTransactionsDict, transactionsDict}) => {
                 setTransactionsDict(tempDict);
             }
             setBalance(balance+amountInput);
+            setLastAmount(amountInput);
         }
         //If the amount entered is null or invalid, show a message
         else if(isNaN(amountInput) || amountInput === null) {
