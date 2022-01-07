@@ -22,10 +22,6 @@ html {
   color: white;
 }
 
-.errorMessage p {
-  
-}
-
 /***************/
 /***SCROLLBAR***/
 /***************/
@@ -58,9 +54,11 @@ html {
   background-color: black;
   width:100%;
   display:block;
-  top:-50px;
+  top:0px;
   transition: top 0.3s;
   z-index: 20; /* Makes navbar appear in front of other elements*/
+  font-size: 17px;
+  text-decoration: none;
 }
 
 #navbar a {
@@ -69,31 +67,31 @@ html {
   display: block;
   text-align: center;
   padding: 15px;
-  text-decoration: none;
-  font-size: 17px;
   font-family: 'SanMarino';
+  text-decoration: none;
 }
 
 #navbar .balance {
   color: white;
-  display: block;
-  text-align: center;
   padding: 15px;
-  text-decoration: none;
-  font-size: 17px;
-  margin: auto;
+  margin:auto;
+  left:50%;
+  transform: translateX(-50%);
   position: absolute;
-  margin-left: 50%;
+  text-align: center;
   font-family: 'SanMarino';
+  text-decoration: none;
 }
 
 #navbar a:hover {
   background-color: white;
   color: black;
+  text-decoration: none;
 }
 
 .lastAmount {
   font-family: 'SanMarino';
+  text-decoration: none;
 }
 
 /* BURGER SETTINGS */
@@ -234,22 +232,6 @@ label {
   color: black;
 }
 
-.parallelogram {
-  width: 100px;
-  height: 30px;
-  background: rgb(0, 0, 0);
-  transform: skew(-25deg) rotate(0deg);
-}
-
-.parallelogram2 {
-  position: relative;
-  bottom: 1em;
-  width: 100px;
-  height: 30px;
-  background: rgb(255, 255, 255);
-  transform: skew(-25deg) rotate(0deg);
-}
-
 /****************/
 /**TRANSACTIONS**/
 /****************/
@@ -287,4 +269,64 @@ label {
 
 .negative {
   color: red;
+}
+
+/*********************/
+/**ACHIEVEMENTS PAGE**/
+/*********************/
+
+/****ACHIEVEMENTS LIST ***/
+.achievementList ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+.achievementList li {
+  width: 300px;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/**** ACHIEVEMENT CIRCLES ****/
+
+.achievementCircle {
+  background-color: black;
+  width:300px;
+  height:300px;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  color: white;
+}
+
+.achievementCircle h1 {
+  padding-top: 10px;
+  color: white;
+  font-family: 'Franklin Gothic';
+}
+
+.achievementCircle p {
+  font-size: 50px;
+  font-family: 'SanMarino';
+}
+
+/*****TEST STUFF *****/
+.parallelogram {
+  width: 100px;
+  height: 30px;
+  background: rgb(0, 0, 0);
+  transform: skew(-25deg) rotate(0deg);
+}
+
+.parallelogram2 {
+  position: relative;
+  bottom: 1em;
+  width: 100px;
+  height: 30px;
+  background: rgb(255, 255, 255);
+  transform: skew(-25deg) rotate(0deg);
 }

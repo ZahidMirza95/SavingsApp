@@ -1,16 +1,16 @@
 import React from "react";
 import '../App.css';
+import NavBar from "../components/NavBar";
+import { useLocation } from "react-router-dom";
 
-function StatsPage(props) {
-    const { data } = props.location.state;
+function StatsPage() {
+    const location = useLocation();
+    const balance = location.state[0];
+    const transactionsDict = location.state[1];
     return(
         <div className="App">
-            <div id='navbar'>
-                <p className='balance'>{parseFloat(data[0]).toFixed(2)}</p>
-                <a> Achievements </a>
-                <a> Stats </a>
-                <a> Home </a>
-            </div>
+            <NavBar balance = {balance} transactionsDict={transactionsDict}/>
+            <h1> {balance} </h1>
         </div>
     );
 }

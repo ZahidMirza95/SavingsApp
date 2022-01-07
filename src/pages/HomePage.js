@@ -3,7 +3,7 @@ import '../App.css';
 import Form from '../components/Form';
 import TransactionList from '../components/TransactionList';
 import ErrorMessageBox from '../components/ErrorMessageBox';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 function HomePage(props) {
     //Variable declarations
@@ -46,7 +46,7 @@ function HomePage(props) {
     };
   
     //Makes the navbar appear on scroll
-    window.onscroll = function() {scrollFunction()};
+    /*window.onscroll = function() {scrollFunction()};
   
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -54,18 +54,15 @@ function HomePage(props) {
       } else {
         document.getElementById("navbar").style.top = "-50px";
       }
-    }
+    }*/
   
     return (
       <div className="App">
         <div id='navbar'>
           <p className='balance'>{parseFloat(balance).toFixed(2)}</p>
-          <Link to={{
-                    pathname: "/achievements",
-                    state: "string",
-                }}>Achievements</Link>
-          <a> Stats </a>
-          <a> Home </a>
+          <Link to={"/achievements"} state={[balance, transactionsDict]}>Achievements</Link>
+          <Link to={"/stats"} state={[balance, transactionsDict]}> Stats </Link>
+          <Link to={"/"}> Home </Link>
           <p className= {lastAmount >= 0.0 ? 'lastAmount positive':'lastAmount negative'} id='lastAmount'>
           {lastAmount}
           </p>

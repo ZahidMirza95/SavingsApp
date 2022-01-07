@@ -4,7 +4,7 @@ import '../App.css';
 const ErrorMessageBox = ({message, xPos, yPos, invisible}) => {
     return(
         <div className='errorMessage' id = 'error' style={{left: xPos + 'px', top: yPos + 'px', visibility: invisible ? 'hidden':'visible'}}>
-            <p> {message} </p>
+            {message}
         </div>
     );
 };
