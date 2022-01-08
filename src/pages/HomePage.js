@@ -3,13 +3,15 @@ import '../App.css';
 import Form from '../components/Form';
 import TransactionList from '../components/TransactionList';
 import ErrorMessageBox from '../components/ErrorMessageBox';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function HomePage(props) {
+function HomePage() {
     //Variable declarations
     const [balance, setBalance] = useState(0.00);
     const [lastAmount, setLastAmount] = useState(0.00);
     const [transactionsDict, setTransactionsDict] = useState({});
+    const [amountsAdded, setAmountAdded] = useState([]);
+    const [errorMessages, setErrorMessages] = useState([]);
   
     useEffect(() => {
       getLocalTransactions();

@@ -5,7 +5,7 @@ import Achievement from "../components/Achievement";
 import {Link} from 'react-router-dom';
 import NavBar from "../components/NavBar";
 
-function AchievementsPage(props) {
+function AchievementsPage() {
     const location = useLocation();
     const balance = location.state[0];
     const transactionsDict = location.state[1];
