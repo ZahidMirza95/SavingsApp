@@ -24,8 +24,6 @@ function AchievementsPage() {
                 <li><Achievement name ="Entered 5 Transactions" message = {Math.min(totalTransactions, 5) + "/5"}/></li>
                 <li><Achievement name ="Entered 10 Transactions" message = {Math.min(totalTransactions, 10) + "/10"}/></li>
                 <li><Achievement name ="Entered 100 Transactions" message = {Math.min(totalTransactions, 100) + "/100"}/></li>
-                <li><Achievement name ="Entered 1 Transaction" message = {Math.min(dates.length, 1) + "/1"}/></li>
-                <li><Achievement name ="Entered 1 Transaction" message = {Math.min(dates.length, 1) + "/1"}/></li>
             </ul>
             
         </div>
