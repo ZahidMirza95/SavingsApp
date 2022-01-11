@@ -14,11 +14,11 @@ function App() {
           <Route path = "/stats" element = {<StatsPage/>}/>
         </Routes>*/}
         <Routes>
-          <Route exact path = "/" element = {<HomePage/>}>
+          <Route exact path = "/SavingsApp" element = {<HomePage/>}>
             </Route>
-          <Route path = "/achievements" element = {<AchievementsPage/>}>
+          <Route path = "/SavingsApp/achievements" element = {<AchievementsPage/>}>
             </Route>
-          <Route path = "/stats" element = {<StatsPage/>}>
+          <Route path = "/SavingsApp/stats" element = {<StatsPage/>}>
           </Route>
         </Routes>
       </div>

@@ -7,7 +7,7 @@ import { HashRouter, Link, BrowserRouter, Route, Routes, Switch } from 'react-ro
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename="/">
+    <HashRouter basename="/SavingsApp">
       <App />
       </HashRouter>
   </React.StrictMode>,
