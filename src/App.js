@@ -7,15 +7,21 @@ import { HashRouter, Link, BrowserRouter, Route, Routes, Switch } from 'react-ro
 
 function App() {
   return (
-    <HashRouter>
-          <div className="App">
-          <Routes>
-            <Route exact path = "/" element = {<HomePage/>}/>
-            <Route path = "/achievements" element = {<AchievementsPage/>}/>
-            <Route path = "/stats" element = {<StatsPage/>}/>
-          </Routes>
-          </div>
-    </HashRouter>
+      <div className="App">
+        {/*<Routes>
+          <Route exact path = "/" element = {<HomePage/>}/>
+          <Route path = "/achievements" element = {<AchievementsPage/>}/>
+          <Route path = "/stats" element = {<StatsPage/>}/>
+        </Routes>*/}
+        <Routes>
+          <Route exact path = "/" element = {<HomePage/>}>
+            </Route>
+          <Route path = "/achievements" element = {<AchievementsPage/>}>
+            </Route>
+          <Route path = "/stats" element = {<StatsPage/>}>
+          </Route>
+        </Routes>
+      </div>
   );
 }
 
