@@ -7,7 +7,7 @@ import { HashRouter, Link, BrowserRouter, Route, Routes, Switch } from 'react-ro
 
 function App() {
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
           <div className="App">
           <Routes>
             <Route exact path = "/" element = {<HomePage/>}/>
