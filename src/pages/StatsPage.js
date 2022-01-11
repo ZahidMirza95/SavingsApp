@@ -96,7 +96,7 @@ function StatsPage() {
         labels,
         datasets: [
             {
-                label: 'Amount???',
+                label: 'Total Amount',
                 data: datesThisWeek.map((date) => getTotalTransactions(date)),
                 backgroundColor: 'black',
             }

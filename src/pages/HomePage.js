@@ -22,16 +22,11 @@ function HomePage() {
     }, [transactionsDict]);
   
     const saveLocalTransactions = () => {
-      /*console.log("saving transactions");
-      console.log(localStorage.getItem("transactions"));
-      console.log(transactionsDict);*/
       localStorage.setItem("transactions", JSON.stringify(transactionsDict));
       localStorage.setItem("balance", JSON.stringify(balance));
     };
   
     const getLocalTransactions = () => {
-      /*console.log("getting transactions");
-      console.log(localStorage.getItem("transactions"));*/
       if(localStorage.getItem("transactions") === null) {
         localStorage.setItem("transactions", JSON.stringify({}));
       }
