@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/SavingsApp/static/css/main.0dd0c49a.css",
+    "main.js": "/SavingsApp/static/js/main.a5cfa2be.js",
+    "static/js/787.6cabe5c0.chunk.js": "/SavingsApp/static/js/787.6cabe5c0.chunk.js",
+    "static/media/SanMarinoBeach-2OOLW.ttf": "/SavingsApp/static/media/SanMarinoBeach-2OOLW.b07a29dbb7f150f293a1.ttf",
+    "index.html": "/SavingsApp/index.html",
+    "main.0dd0c49a.css.map": "/SavingsApp/static/css/main.0dd0c49a.css.map",
+    "main.a5cfa2be.js.map": "/SavingsApp/static/js/main.a5cfa2be.js.map",
+    "787.6cabe5c0.chunk.js.map": "/SavingsApp/static/js/787.6cabe5c0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0dd0c49a.css",
+    "static/js/main.a5cfa2be.js"
+  ]
+}
